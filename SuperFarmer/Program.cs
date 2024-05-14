@@ -9,7 +9,16 @@ static class Program
     {
         Application.Init();
         Application.Run(new MainGUI());
+        Program.GameLoop();
         Application.Shutdown();
+    }
+
+    public static void GameLoop()
+    {
+        while (true)
+        {
+
+        }
     }
 }
 
