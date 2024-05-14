@@ -2,7 +2,6 @@ using SuperFarmer.Abstracts;
 
 namespace SuperFarmer.Animals;
 
-public class Rabbit : Animal
+public class Wolf : Animal
 {
-    public int Count { get; set; }
 }

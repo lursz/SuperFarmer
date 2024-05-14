@@ -8,8 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Abstracts\" />
-      <Folder Include="Core\" />
       <Folder Include="UI\" />
     </ItemGroup>
 

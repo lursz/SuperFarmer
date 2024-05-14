@@ -11,14 +11,17 @@ public static class AnimalsASCII
                                 """;
 
  public static string Pig => """
-                              ,,__
-                             c''   )?
-                               ''''
+                              <`--'\>______
+                              /. .  `'     \
+                             (`')  ,        @
+                              `-._,        /
+                                 )-)_/--( >
                              """;
 
  public static string Sheep => """
-                                U  U\\.@@@@`.
-                               \\__/(@@@@@@@@)
+                                n__n
+                               /U  U\\.@@@@`.
+                               \\__/(@@@@@@@@)-@
                                      (@@@@@@)
                                       ||  ||
                                """;
@@ -71,4 +74,22 @@ public static class AnimalsASCII
                                         (   /  ,|...-'
                                          \_/^\/||__
 """;
+
+ public static string exchangeRates => """
+                                       EXCHANGE RATES:
+                                       
+                                       1 Rabbit = 1 Rabbit
+
+                                       1 Sheep = 6 Rabbits
+
+                                       1 Pig = 2 Sheep
+
+                                       1 Cow = 3 Pigs
+
+                                       1 Horse = 2 Cows
+
+                                       1 Dog = 1 Sheep
+
+                                       1 Hound = 1 Cow
+                                       """;
 }

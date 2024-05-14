@@ -17,6 +17,18 @@ namespace SuperFarmer.UI {
         
         private Terminal.Gui.ColorScheme redOnBlack;
         
+        private Terminal.Gui.View exchangeRatesView;
+        
+        private Terminal.Gui.Label exchangeRatesLabel;
+        
+        private Terminal.Gui.Button exchangeButton;
+        
+        private Terminal.Gui.View dicesView;
+        
+        private Terminal.Gui.Button rollTheDicesButton;
+        
+        private Terminal.Gui.Button buttonQuit;
+        
         private Terminal.Gui.View animalsBoard;
         
         private Terminal.Gui.View rabbit;
@@ -63,6 +75,12 @@ namespace SuperFarmer.UI {
             this.rabbitascii = new Terminal.Gui.Label();
             this.rabbit = new Terminal.Gui.View();
             this.animalsBoard = new Terminal.Gui.View();
+            this.buttonQuit = new Terminal.Gui.Button();
+            this.rollTheDicesButton = new Terminal.Gui.Button();
+            this.dicesView = new Terminal.Gui.View();
+            this.exchangeButton = new Terminal.Gui.Button();
+            this.exchangeRatesLabel = new Terminal.Gui.Label();
+            this.exchangeRatesView = new Terminal.Gui.View();
             this.redOnBlack = new Terminal.Gui.ColorScheme();
             this.redOnBlack.Normal = new Terminal.Gui.Attribute(Terminal.Gui.Color.Red, Terminal.Gui.Color.Black);
             this.redOnBlack.HotNormal = new Terminal.Gui.Attribute(Terminal.Gui.Color.BrightRed, Terminal.Gui.Color.Black);
@@ -82,10 +100,66 @@ namespace SuperFarmer.UI {
             this.Border.DrawMarginFrame = true;
             this.TextAlignment = Terminal.Gui.TextAlignment.Left;
             this.Title = "";
+            this.exchangeRatesView.Width = Dim.Percent(20f);
+            this.exchangeRatesView.Height = Dim.Percent(60f);
+            this.exchangeRatesView.X = 0;
+            this.exchangeRatesView.Y = 0;
+            this.exchangeRatesView.Visible = true;
+            this.exchangeRatesView.Data = "exchangeRatesView";
+            this.exchangeRatesView.TextAlignment = Terminal.Gui.TextAlignment.Left;
+            this.Add(this.exchangeRatesView);
+            this.exchangeRatesLabel.Width = 4;
+            this.exchangeRatesLabel.Height = 1;
+            this.exchangeRatesLabel.X = Pos.Center();
+            this.exchangeRatesLabel.Y = 1;
+            this.exchangeRatesLabel.Visible = true;
+            this.exchangeRatesLabel.Data = "exchangeRatesLabel";
+            this.exchangeRatesLabel.Text = "exchangeRates";
+            this.exchangeRatesLabel.TextAlignment = Terminal.Gui.TextAlignment.Centered;
+            this.exchangeRatesView.Add(this.exchangeRatesLabel);
+            this.exchangeButton.Width = 12;
+            this.exchangeButton.Height = 1;
+            this.exchangeButton.X = Pos.Center();
+            this.exchangeButton.Y = Pos.Percent(90f);
+            this.exchangeButton.Visible = true;
+            this.exchangeButton.Data = "exchangeButton";
+            this.exchangeButton.Text = "Exchange";
+            this.exchangeButton.TextAlignment = Terminal.Gui.TextAlignment.Centered;
+            this.exchangeButton.IsDefault = false;
+            this.exchangeRatesView.Add(this.exchangeButton);
+            this.dicesView.Width = Dim.Percent(80f);
+            this.dicesView.Height = Dim.Percent(60f);
+            this.dicesView.X = Pos.Right(exchangeRatesView) + 1;
+            this.dicesView.Y = 0;
+            this.dicesView.Visible = true;
+            this.dicesView.Data = "dicesView";
+            this.dicesView.TextAlignment = Terminal.Gui.TextAlignment.Left;
+            this.Add(this.dicesView);
+            this.rollTheDicesButton.Width = 17;
+            this.rollTheDicesButton.Height = 1;
+            this.rollTheDicesButton.X = Pos.Center();
+            this.rollTheDicesButton.Y = Pos.Percent(90f);
+            this.rollTheDicesButton.Visible = true;
+            this.rollTheDicesButton.Data = "rollTheDicesButton";
+            this.rollTheDicesButton.Text = "Roll the dice";
+            this.rollTheDicesButton.TextAlignment = Terminal.Gui.TextAlignment.Centered;
+            this.rollTheDicesButton.IsDefault = false;
+            this.dicesView.Add(this.rollTheDicesButton);
+            this.buttonQuit.Width = 8;
+            this.buttonQuit.Height = 1;
+            this.buttonQuit.X = Pos.Percent(94f);
+            this.buttonQuit.Y = 0;
+            this.buttonQuit.Visible = true;
+            this.buttonQuit.ColorScheme = this.redOnBlack;
+            this.buttonQuit.Data = "buttonQuit";
+            this.buttonQuit.Text = "Quit";
+            this.buttonQuit.TextAlignment = Terminal.Gui.TextAlignment.Centered;
+            this.buttonQuit.IsDefault = false;
+            this.Add(this.buttonQuit);
             this.animalsBoard.Width = Dim.Fill(0);
-            this.animalsBoard.Height = Dim.Percent(40f);
+            this.animalsBoard.Height = Dim.Percent(45f);
             this.animalsBoard.X = 0;
-            this.animalsBoard.Y = 17;
+            this.animalsBoard.Y = Pos.Bottom(exchangeRatesView);
             this.animalsBoard.Visible = true;
             this.animalsBoard.Data = "animalsBoard";
             this.animalsBoard.TextAlignment = Terminal.Gui.TextAlignment.Left;
@@ -101,7 +175,7 @@ namespace SuperFarmer.UI {
             this.rabbitascii.Width = 4;
             this.rabbitascii.Height = 1;
             this.rabbitascii.X = Pos.Center();
-            this.rabbitascii.Y = 1;
+            this.rabbitascii.Y = 3;
             this.rabbitascii.Visible = true;
             this.rabbitascii.Data = "rabbitascii";
             this.rabbitascii.Text = "rabitascii";
@@ -118,7 +192,7 @@ namespace SuperFarmer.UI {
             this.sheepascii.Width = 4;
             this.sheepascii.Height = 1;
             this.sheepascii.X = Pos.Center();
-            this.sheepascii.Y = 1;
+            this.sheepascii.Y = 3;
             this.sheepascii.Visible = true;
             this.sheepascii.Data = "sheepascii";
             this.sheepascii.Text = "sheepascii";
@@ -135,7 +209,7 @@ namespace SuperFarmer.UI {
             this.pigascii.Width = 4;
             this.pigascii.Height = 1;
             this.pigascii.X = Pos.Center();
-            this.pigascii.Y = 1;
+            this.pigascii.Y = 3;
             this.pigascii.Visible = true;
             this.pigascii.Data = "pigascii";
             this.pigascii.Text = "pigascii";
@@ -152,7 +226,7 @@ namespace SuperFarmer.UI {
             this.cowascii.Width = 4;
             this.cowascii.Height = 1;
             this.cowascii.X = Pos.Center();
-            this.cowascii.Y = 1;
+            this.cowascii.Y = 3;
             this.cowascii.Visible = true;
             this.cowascii.Data = "cowascii";
             this.cowascii.Text = "cowascii";
@@ -169,7 +243,7 @@ namespace SuperFarmer.UI {
             this.horseascii.Width = 4;
             this.horseascii.Height = 1;
             this.horseascii.X = Pos.Center();
-            this.horseascii.Y = 1;
+            this.horseascii.Y = 3;
             this.horseascii.Visible = true;
             this.horseascii.Data = "horseascii";
             this.horseascii.Text = "horseascii";
@@ -186,7 +260,7 @@ namespace SuperFarmer.UI {
             this.dogascii.Width = 4;
             this.dogascii.Height = 1;
             this.dogascii.X = Pos.Center();
-            this.dogascii.Y = 1;
+            this.dogascii.Y = 3;
             this.dogascii.Visible = true;
             this.dogascii.Data = "dogascii";
             this.dogascii.Text = "dogascii";
@@ -203,7 +277,7 @@ namespace SuperFarmer.UI {
             this.houndascii.Width = 4;
             this.houndascii.Height = 1;
             this.houndascii.X = Pos.Center();
-            this.houndascii.Y = 1;
+            this.houndascii.Y = 3;
             this.houndascii.Visible = true;
             this.houndascii.Data = "houndascii";
             this.houndascii.Text = "houndascii";
