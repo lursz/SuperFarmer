@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Animals\Farm\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Terminal.Gui" Version="1.16.0" />
     </ItemGroup>
 

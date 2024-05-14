@@ -23,7 +23,7 @@ namespace SuperFarmer.UI
         public MainGUI(Game game) {
             this.game = game;
             InitializeComponent();
-            this.Title = "Super Farmer (Ctrl + Q to quit)";
+            this.Title = "Super Farmer";
             // Buttons
             this.buttonQuit.Clicked += () =>
             {
@@ -38,13 +38,14 @@ namespace SuperFarmer.UI
                 dice1.Text = $"{rolledAnimals[0]}\n\n{AnimalsASCII.GetAnimalASCII(rolledAnimals[0])}";
                 dice2.Text = $"{rolledAnimals[1]}\n\n{AnimalsASCII.GetAnimalASCII(rolledAnimals[1])}";
                 this.UpdateAnimalsLabels();
+                checkIfGameIsOver();
             };
             
-            // this.exchangeButton.Clicked += () => {
-            //     var exchangeDialog = new ExchangeDialog(game);
-            //     Application.Run(exchangeDialog);
-            //     this.Refresh();
-            // };
+            this.exchangeButton.Clicked += () => {
+                var exchangeDialog = new ExchangeDialog(game);
+                Application.Run(exchangeDialog);
+                this.UpdateAnimalsLabels();
+            };
             // Assign ASCII images
             this.animalsBoard.Border = new Border()
             {
@@ -135,7 +136,15 @@ namespace SuperFarmer.UI
             HoundLabel.Text = $"Hound: {game.CurrentPlayer.AnimalHerd.Animals[Animal.Hound]}";
 
         }
-
+        
+        public void checkIfGameIsOver()
+        {
+            if (game.IsCurrentPlayerWinner())
+            {
+                MessageBox.ErrorQuery("Game Over", $"{game.CurrentPlayer.Name} has won the game!", "Ok");
+                Application.RequestStop();
+            }
+        }
    
     }
 }

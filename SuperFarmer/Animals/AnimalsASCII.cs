@@ -115,4 +115,28 @@ public static class AnimalsASCII
              return "";
      }
  }
+
+ public static Animal stringToAnimal(string animal)
+ {
+     animal = animal.ToLower();
+     switch (animal)
+     {
+         case "rabbit":
+             return Animal.Rabbit;
+         case "pig":
+             return Animal.Pig;
+         case "sheep":
+             return Animal.Sheep;
+         case "cow":
+             return Animal.Cow;
+         case "horse":
+             return Animal.Horse;
+         case "dog":
+             return Animal.Dog;
+         case "hound":
+             return Animal.Hound;
+         default:
+             return Animal.Rabbit;
+     }
+ }
 }

@@ -7,7 +7,7 @@ The rules and guidelines are available here:
 
 
 ## Motivation
-This project is an interview assignment, so the main goal, obviously, was to fulfill the requirements of the assignment. However, I also decided to have some fun with it, and this is why I decided to implement a terminal-gui interface with mouse support.
+This project is an interview assignment, so the main goal, obviously, was to fulfill the requirements. However, I also decided to have some fun with it, and this is why I decided to implement a terminal-gui interface with mouse support.
 
 
 ## Run

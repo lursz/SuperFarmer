@@ -18,6 +18,13 @@ public class Game
     public Game()
     {
         GlobalHerd = new AnimalHerd();
+        GlobalHerd.Animals[Animal.Rabbit] = 60;
+        GlobalHerd.Animals[Animal.Sheep] = 24;
+        GlobalHerd.Animals[Animal.Pig] = 20;
+        GlobalHerd.Animals[Animal.Cow] = 12;
+        GlobalHerd.Animals[Animal.Horse] = 6;
+        GlobalHerd.Animals[Animal.Dog] = 4;
+        GlobalHerd.Animals[Animal.Hound] = 2;
         ListOfDices = new List<Dice>();
         Players = new List<Player>();
 
@@ -38,9 +45,9 @@ public class Game
         currentPlayerIndex = (currentPlayerIndex + 1) % Players.Count;
     }
     
-    public void ExchangeAnimals(AnimalHerd other, Animal animalToGo, Animal animalToGet, int quantityToGo)
+    public void ExchangeAnimals(Animal animalToGo, Animal animalToGet, int quantityToGo)
     {
-        CurrentPlayer.AnimalHerd.ExchangeAnimal(other, animalToGo, animalToGet, quantityToGo);
+        CurrentPlayer.AnimalHerd.ExchangeAnimal(GlobalHerd, animalToGo, animalToGet, quantityToGo);
     }
     
     public List<Animal> RollDices()
@@ -60,10 +67,11 @@ public class Game
         {
             var quantity = CurrentPlayer.AnimalHerd.Animals[animal];
             var pairs = quantity / 2;
-
-            Console.WriteLine($"You have {quantity} {animal} and you added {pairs} pairs of {animal}");
             
-            CurrentPlayer.AnimalHerd.Animals[animal] += pairs;
+            var delta = Math.Min(pairs, GlobalHerd.Animals[animal]);
+            
+            CurrentPlayer.AnimalHerd.Animals[animal] += delta;
+            GlobalHerd.Animals[animal] -= delta;
         }
 
         foreach (var animal in animals)
