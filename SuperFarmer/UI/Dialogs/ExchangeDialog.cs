@@ -33,18 +33,17 @@ public class ExchangeDialog : Dialog
         var animalsListFromView = new ListView(animalsList)
         {
             X = 0,
-            Y = 2,
+            Y = 1,
             Width = Dim.Percent(50),
             Height = Dim.Percent(100),
             AllowsMarking = true,
             AllowsMultipleSelection = false
-            
         };
         
         var targetAnimalLabel = new Label()
         {
             Text = "To:",
-            X = Pos.Left(sourceAnimalLabel),
+            X = Pos.Right(animalsListFromView),
             Y = 0
             
         };
@@ -52,26 +51,24 @@ public class ExchangeDialog : Dialog
         var animalsListToView = new ListView(animalsList)
         {
             X = Pos.Right(animalsListFromView),
-            Y = 2,
+            Y = 1,
             Width = Dim.Percent(50),
             Height = Dim.Percent(100),
             AllowsMarking = true,
             AllowsMultipleSelection = false
         };
         
-
-        
         var quantityLabel = new Label()
         {
             Text = "Quantity:",
             X = 0,
-            Y = Pos.Bottom(animalsListFromView) + 1
+            Y = 10
         };
         
         var quantityText = new TextField("")
         {
-            X = Pos.Left(quantityLabel),
-            Y = Pos.Bottom(targetAnimalLabel),
+            X = Pos.Right(quantityLabel),
+            Y = 10,
             Width = Dim.Fill(),
         };
         
