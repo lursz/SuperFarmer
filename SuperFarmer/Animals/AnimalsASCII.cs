@@ -92,4 +92,27 @@ public static class AnimalsASCII
 
                                        1 Hound = 1 Cow
                                        """;
+ 
+ public static string GetAnimalASCII(Animal animal)
+ {
+     switch (animal)
+     {
+         case Animal.Rabbit:
+             return Rabbit;
+         case Animal.Pig:
+             return Pig;
+         case Animal.Sheep:
+             return Sheep;
+         case Animal.Cow:
+             return Cow;
+         case Animal.Horse:
+             return Horse;
+         case Animal.Dog:
+             return Dog;
+         case Animal.Hound:
+             return Hound;
+         default:
+             return "";
+     }
+ }
 }

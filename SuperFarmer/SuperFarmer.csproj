@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="Animals\Farm\" />
-      <Folder Include="UI\" />
     </ItemGroup>
 
     <ItemGroup>

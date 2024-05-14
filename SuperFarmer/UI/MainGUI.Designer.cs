@@ -25,6 +25,10 @@ namespace SuperFarmer.UI {
         
         private Terminal.Gui.View dicesView;
         
+        private Terminal.Gui.Label dice1;
+        
+        private Terminal.Gui.Label dice2;
+        
         private Terminal.Gui.Button rollTheDicesButton;
         
         private Terminal.Gui.Button buttonQuit;
@@ -77,6 +81,8 @@ namespace SuperFarmer.UI {
             this.animalsBoard = new Terminal.Gui.View();
             this.buttonQuit = new Terminal.Gui.Button();
             this.rollTheDicesButton = new Terminal.Gui.Button();
+            this.dice2 = new Terminal.Gui.Label();
+            this.dice1 = new Terminal.Gui.Label();
             this.dicesView = new Terminal.Gui.View();
             this.exchangeButton = new Terminal.Gui.Button();
             this.exchangeRatesLabel = new Terminal.Gui.Label();
@@ -135,6 +141,24 @@ namespace SuperFarmer.UI {
             this.dicesView.Data = "dicesView";
             this.dicesView.TextAlignment = Terminal.Gui.TextAlignment.Left;
             this.Add(this.dicesView);
+            this.dice1.Width = 4;
+            this.dice1.Height = 1;
+            this.dice1.X = Pos.Percent(35f);
+            this.dice1.Y = Pos.Percent(30f);
+            this.dice1.Visible = true;
+            this.dice1.Data = "dice1";
+            this.dice1.Text = "dice1";
+            this.dice1.TextAlignment = Terminal.Gui.TextAlignment.Left;
+            this.dicesView.Add(this.dice1);
+            this.dice2.Width = 4;
+            this.dice2.Height = 1;
+            this.dice2.X = Pos.Percent(65f);
+            this.dice2.Y = Pos.Percent(30f);
+            this.dice2.Visible = true;
+            this.dice2.Data = "dice2";
+            this.dice2.Text = "dice2";
+            this.dice2.TextAlignment = Terminal.Gui.TextAlignment.Left;
+            this.dicesView.Add(this.dice2);
             this.rollTheDicesButton.Width = 17;
             this.rollTheDicesButton.Height = 1;
             this.rollTheDicesButton.X = Pos.Center();
