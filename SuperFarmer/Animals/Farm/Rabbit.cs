@@ -1,7 +1,6 @@
 namespace SuperFarmer.Animals;
 
-public interface Animal
+public class Rabbit : Animal
 {
     public int Count { get; set; }
-    
 }

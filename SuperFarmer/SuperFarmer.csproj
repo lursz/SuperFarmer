@@ -7,4 +7,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Abstracts\" />
+      <Folder Include="Core\" />
+      <Folder Include="UI\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Terminal.Gui" Version="1.16.0" />
+    </ItemGroup>
+
 </Project>
