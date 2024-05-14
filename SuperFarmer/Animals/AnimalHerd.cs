@@ -46,19 +46,5 @@ public class AnimalHerd
         Animals[animalToGet] += realQuantityToAdd;
         other.Animals[animalToGo] += realQuantityToRemove;
         
-        Console.WriteLine($"Own quantity: {ownQuantity}");
-        Console.WriteLine($"Other quantity: {otherQuantity}");
-        Console.WriteLine($"Reduced quantity: {reducedQuantity}");
-        
-        Console.WriteLine($"Acquired quantity: {acquiredQuantity}");
-        Console.WriteLine($"Possible quantity: {possibleQuantity}");
-        
-        Console.WriteLine($"Real quantity to remove: {realQuantityToRemove}");
-        Console.WriteLine($"Real quantity to add: {realQuantityToAdd}");
-        
-        Console.WriteLine($"Own {animalToGo}: {Animals[animalToGo]}");
-        Console.WriteLine($"Own {animalToGet}: {Animals[animalToGet]}");
-        
-        Console.WriteLine($"Exchanged {realQuantityToRemove} {animalToGo} for {realQuantityToAdd} {animalToGet}");
     }
 }
