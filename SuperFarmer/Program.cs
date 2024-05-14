@@ -1,4 +1,5 @@
-﻿using Terminal.Gui;
+﻿using SuperFarmer.UI;
+using Terminal.Gui;
 
 namespace SuperFarmer;
 
